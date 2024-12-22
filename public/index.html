@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebRTC Voice Chat</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        text-align: center;
+        background-color: cadetblue;
+      }
+      #users {
+        margin: 20px 0;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        background-color: antiquewhite;
+        color: brown;
+      }
+      audio {
+        display: block;
+        margin: 20px auto;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Arama Yap</h1>
+    <span>Benim ID'm <strong id="myID"></strong></span>
+
+    <input type="text" id="userIdInput" placeholder="Bir ID gir" />
+    <div>
+      <button id="startCall">Aramayı Başlat</button>
+      <button id="endCall" class="hidden">Aramayı Durdur</button>
+    </div>
+    <div id="status">Statü: Bağlantı Yok</div>
+
+    <div>
+      <h2>Kullanıcı Listesi</h2>
+      <section id="userList"></section>
+    </div>
+
+    <!-- Audio elements -->
+    <audio id="localAudio" autoplay muted></audio>
+    <audio id="remoteAudio" autoplay></audio>
+
+    <!-- Script -->
+    <script src="client.js"></script>
+  </body>
+</html>
